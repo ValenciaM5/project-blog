@@ -1,4 +1,4 @@
-package main
+/* package main
 
 import (
 	"fmt"
@@ -43,14 +43,12 @@ func Anagrams(f string, s string) bool {
 	return true
 }
 
-/*func main() {
-
-	fmt.Println(CountEvens([]int{1, 2, 3, 4, 5, 6})) 
-
+func main() {
+	fmt.Println(CountEvens([]int{1, 2, 3, 4, 5, 6}))
 
 	words := []string{"go", "is", "fun", "go", "go", "fun"}
-	fmt.Println(GetWordCounts(words)) 
+	fmt.Println(GetWordCounts(words))
 
-
-	fmt.Println(Anagrams("listen", "silent")) 
+	fmt.Println(Anagrams("listen", "silent"))
 }
+*/
