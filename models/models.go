@@ -21,8 +21,8 @@ type Post struct {
 	ID        uuid.UUID `gorm:"type:uuid;default:uuid_generate_v4();primaryKey"`
 	Title     string
 	Content   string    `gorm:"type:text"`
-	AuthorID  uuid.UUID `gorm:"type:uuid;not null"`                // Foreign key
-	Author    User      `gorm:"foreignKey:AuthorID;references:ID"` // Reference to User's ID
+	AuthorID  uuid.UUID `gorm:"type:uuid;not null"`               
+	Author    User      `gorm:"foreignKey:AuthorID;references:ID"` 
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }

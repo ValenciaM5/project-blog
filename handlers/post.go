@@ -45,7 +45,6 @@ func (h *postHandler) Create(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//  Fetch the full post with author
 	createdPost, err := h.Service.FindByID(post.ID.String())
 	if err != nil {
 		http.Error(w, "Failed to fetch created post", http.StatusInternalServerError)
@@ -99,7 +98,7 @@ func (h *postHandler) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// Re-fetch updated post with author
+
 	updatedPost, err := h.Service.FindByID(id)
 	if err != nil {
 		http.Error(w, "Failed to fetch updated post", http.StatusInternalServerError)
@@ -112,13 +111,12 @@ func (h *postHandler) Delete(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
 
-	// 🔐 Extract user ID from context
+	
 	userID := r.Context().Value("user_id").(string)
 
-	// 🔧 Call service with both ID and userID
 	err := h.Service.Delete(id, userID)
 	if err != nil {
-		// Return 401 if unauthorized, else 500
+		
 		if err.Error() == "unauthorized" {
 			http.Error(w, "Unauthorized to delete this post", http.StatusUnauthorized)
 			return
@@ -127,7 +125,7 @@ func (h *postHandler) Delete(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// ✅ Success
+
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]string{
 		"message": "Post deleted successfully",
