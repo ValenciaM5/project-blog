@@ -23,28 +23,24 @@ func main() {
 
 	db.InitDB()
 
-
 	userRepo := repository.NewUserRepository(db.DB)
 	postRepo := repository.NewPostRepository(db.DB)
 
-	
 	userService := services.NewUserService(userRepo)
 	postService := services.NewPostService(postRepo)
-
 
 	userHandler := handlers.NewUserHandler(userService)
 	postHandler := handlers.NewPostHandler(postService)
 
-
 	router := routes.SetupRouter(userHandler, postHandler)
-
 
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
 
-
 	log.Printf("Server running at http://localhost:%s", port)
 	log.Fatal(http.ListenAndServe(":"+port, router))
 }
+
+// Live App:https://project-blog-oxkc.onrender.com

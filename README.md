@@ -15,8 +15,7 @@ godotenv (for environment variable management)
 
 Render (for deployment)
 
-Live App:
-https://project-blog-oxkc.onrender.com
+
 
 Setup Instructions
 Prerequisites
@@ -30,8 +29,7 @@ Local Setup
 Clone the repository:
 
 
-git clone <repository-url>
-cd go-blog
+
 Copy the example environment file and update the values:
 
 cp .env.example .env
