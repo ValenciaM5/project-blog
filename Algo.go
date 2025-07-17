@@ -1,8 +1,4 @@
-/* package main
-
-import (
-	"fmt"
-)
+package main
 
 func CountEvens(list []int) int {
 	count := 0
@@ -43,6 +39,7 @@ func Anagrams(f string, s string) bool {
 	return true
 }
 
+/*
 func main() {
 	fmt.Println(CountEvens([]int{1, 2, 3, 4, 5, 6}))
 
