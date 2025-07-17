@@ -8,7 +8,11 @@ Gorilla Mux
 JWT for authentication
 bcrypt for password hashing
 godotenv for environment variables
-Render for deployment
+Render for deployment 
+
+The project is deployed on Render:
+[Click here to view the app] https://project-blog-oxkc.onrender.com
+
 
 Setup Instructions
 Prerequisites
