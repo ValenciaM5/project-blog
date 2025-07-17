@@ -15,6 +15,11 @@ import (
 func SetupRouter(userHandler handlers.UserHandler, postHandler handlers.PostHandler) *mux.Router {
 	router := mux.NewRouter()
 
+	// ✅ Root route
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Welcome to my Blog API "))
+	}).Methods("GET")
+
 	// Auth routes
 	router.HandleFunc("/register", userHandler.Register).Methods("POST")
 	router.HandleFunc("/login", userHandler.Login).Methods("POST")
