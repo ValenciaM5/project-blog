@@ -76,7 +76,6 @@ Use the default settings.
 
 Environment Variables:
 
-
 DB_HOST=your-database-host
 DB_USER=your-database-username
 DB_PASSWORD=your-database-password
