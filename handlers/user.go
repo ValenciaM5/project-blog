@@ -2,9 +2,9 @@ package handlers
 
 import (
 	"encoding/json"
+	"net/http"
 	"project-blog/models"
 	"project-blog/services"
-	"net/http"
 )
 
 type UserHandler interface {
